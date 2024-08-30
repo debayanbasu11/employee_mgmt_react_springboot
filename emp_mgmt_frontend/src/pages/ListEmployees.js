@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'; 
 //import { useFetch } from '../hooks/useFetch';
 import { Link } from 'react-router-dom';
+//import { deleteEmployee, listEmployees, updateEmployee } from '../services/EmployeeService';
 import { deleteEmployee, listEmployees } from '../services/EmployeeService';
-export const ListEmployees = () => {
-   
+import { useTitle } from '../hooks/useTitle';
+//import { AddEmployee } from './AddEmployee';
+//import { updateEmployee } from '../services/EmployeeService';
+export const ListEmployees = ({title}) => {
+
+    useTitle(title);
 
    //const { data: employees } = useFetch("http://localhost:8080/api/employees");
 
@@ -61,6 +66,7 @@ export const ListEmployees = () => {
                                 <td>{employee.salary}</td>
                                 <td>
                                 <Link to={`/update-employee/${employee.id}`} className='btn btn-warning'>Update</Link>
+                                {/*<button href='#' onClick={updateEmployee} className='btn btn-warning'>Update</button> */}
                                 <button href='#' onClick={() => removeEmployee(employee.id)} className='btn btn-danger' style={{marginLeft: '10px'}}>Delete</button>
                                 </td>
                             </tr>

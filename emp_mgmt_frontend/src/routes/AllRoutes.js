@@ -5,10 +5,10 @@ export const AllRoutes = () => {
   return (
     <div className="dark:bg-darkbg">
         <Routes>
-            <Route path="/" element={<ListEmployees/>} end/>
-            <Route path="/employees" element={<ListEmployees/>} />
-            <Route path="/add-employee" element={<AddEmployee/>} />
-            <Route path='/update-employee/:id' element={<AddEmployee/>}/>
+            <Route path="/" element={<ListEmployees title="Employee List"/>} end/>
+            <Route path="/employees" element={<ListEmployees title="Employee List"/>} />
+            <Route path="/add-employee" element={<AddEmployee title="Add Employee"/>} />
+            <Route path='/update-employee/:id' element={<AddEmployee title="Update Employee"/>}/>
         </Routes>
     </div>
   )

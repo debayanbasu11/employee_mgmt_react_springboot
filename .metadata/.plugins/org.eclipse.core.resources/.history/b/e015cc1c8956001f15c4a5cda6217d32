@@ -1,5 +1,0 @@
-package com.debayan.emp_mgmt_backend.service;
-
-public interface EmployeeService {
-
-}

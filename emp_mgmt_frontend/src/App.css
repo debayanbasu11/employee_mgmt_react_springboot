@@ -7,3 +7,7 @@
   text-align:center;
   color:#ffffff;
 }
+
+.non-editable{
+  pointer-events: none;
+}

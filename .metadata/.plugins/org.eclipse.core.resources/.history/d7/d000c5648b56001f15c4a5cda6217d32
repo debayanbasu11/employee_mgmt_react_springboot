@@ -1,8 +1,0 @@
-package com.debayan.emp_mgmt_backend.service;
-
-import com.debayan.emp_mgmt_backend.dto.EmployeeDto;
-
-public interface EmployeeService {
-
-	EmployeeDto createEmployee(EmployeeDto employeeDto);
-}

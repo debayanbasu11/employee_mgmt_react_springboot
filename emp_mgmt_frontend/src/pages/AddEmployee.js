@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { createEmployee, getEmployeeById, updateEmployee } from '../services/EmployeeService';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useTitle } from '../hooks/useTitle';
+import { PreviewEmployee } from './PreviewEmployee';
+import { EmployeeContext } from '../Contexts/EmployeeContext';
 
-export const AddEmployee = () => {
+export const AddEmployee = ({title}) => {
+
+  useTitle(title);
 
   const [name, setName] = useState('');
   const [designation, setDesignation] = useState('');
@@ -31,6 +36,8 @@ export const AddEmployee = () => {
       })
     }
   },[id]);
+
+  const [preview, setPreview] = useState(false);
 
   const saveOrUpdateEmployee = (e) => {
     e.preventDefault();
@@ -63,7 +70,7 @@ export const AddEmployee = () => {
   function validateForm(){
      let valid = true;
 
-     const errorsCopy = {... errors};
+     const errorsCopy = {...errors};
 
      if(name.trim()){
       errorsCopy.name = '';
@@ -100,6 +107,8 @@ export const AddEmployee = () => {
   return (
     <div className='container'>
       <br/>
+      <EmployeeContext.Provider value={{id,name,designation,email,salary}}>
+        {preview ? <PreviewEmployee/> : 
       <div className='row'>
         <div className='card col-md-6 offset-md-3'>
           {  
@@ -156,11 +165,14 @@ export const AddEmployee = () => {
               </div>
 
               <button className='btn btn-success' onClick={saveOrUpdateEmployee}>Submit</button>
+              &nbsp;<button className='btn btn-success' onClick={()=>{setPreview(true)}}>Preview</button>
 
             </form>
           </div>
         </div>
       </div>
+      }
+      </EmployeeContext.Provider>
     </div>
   )
 }

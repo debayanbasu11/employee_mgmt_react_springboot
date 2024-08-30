@@ -5,11 +5,15 @@ import { Header, Footer} from "./components";
 function App() {
   return (
     <div>
-      <Header/>
+      <Header footerAlert={footerAlert}/>
       <AllRoutes/>
-      <Footer/>
+      <Footer footerAlert={footerAlert}/>
     </div>
   );
+}
+
+const footerAlert = () => {
+  alert("All Rights Reserved 2024 @Debayan Basu");
 }
 
 export default App;

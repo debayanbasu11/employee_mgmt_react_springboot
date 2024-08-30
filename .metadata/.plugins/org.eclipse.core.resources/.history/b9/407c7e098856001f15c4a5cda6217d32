@@ -1,5 +1,0 @@
-package com.debayan.emp_mgmt_backend.dto;
-
-public class EmployeeDto {
-
-}
