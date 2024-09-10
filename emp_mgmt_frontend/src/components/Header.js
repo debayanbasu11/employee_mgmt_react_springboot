@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-export class Header extends React.Component {
+export class Header extends PureComponent {
 
   // Constructor method is called before anything else when the component is initiated & it is the natural place to setup the initial state and other initial values
   constructor(props){

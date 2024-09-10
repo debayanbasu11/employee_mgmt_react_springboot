@@ -5,7 +5,7 @@ import { useTitle } from '../hooks/useTitle';
 import { PreviewEmployee } from './PreviewEmployee';
 import { EmployeeContext } from '../Contexts/EmployeeContext';
 
-export const AddEmployee = ({title}) => {
+export default function AddEmployee({title}) {
 
   useTitle(title);
 
@@ -24,13 +24,20 @@ export const AddEmployee = ({title}) => {
 
   const navigator = useNavigate();
 
+  const getData = (data) => {
+    console.log(data);
+  }
+
   useEffect(()=>{
+    
     if(id){
       getEmployeeById(id).then(response => {
+        
         setName(response.data.name);
         setDesignation(response.data.designation);
         setEmail(response.data.email);
         setSalary(response.data.salary);
+        
       }).catch(error => {
         console.error(error);
       })
@@ -107,8 +114,12 @@ export const AddEmployee = ({title}) => {
   return (
     <div className='container'>
       <br/>
-      <EmployeeContext.Provider value={{id,name,designation,email,salary}}>
-        {preview ? <PreviewEmployee/> : 
+      
+        {preview ? 
+        <EmployeeContext.Provider value={{name,designation,email,salary}}>
+          <PreviewEmployee getData={getData}/> 
+          </EmployeeContext.Provider>
+          : 
       <div className='row'>
         <div className='card col-md-6 offset-md-3'>
           {  
@@ -133,7 +144,7 @@ export const AddEmployee = ({title}) => {
                 <input 
                   type='text'
                   placeholder='Enter Employee Designation'
-                  name='name'
+                  name='designation'
                   value={designation}
                   className={`form-control ${ errors.designation ? 'is-invalid' : '' }`}
                   onChange={(e) => setDesignation(e.target.value)}>
@@ -172,8 +183,7 @@ export const AddEmployee = ({title}) => {
         </div>
       </div>
       }
-      </EmployeeContext.Provider>
+     
     </div>
   )
 }
-

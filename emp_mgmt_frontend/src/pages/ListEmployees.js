@@ -6,7 +6,7 @@ import { deleteEmployee, listEmployees } from '../services/EmployeeService';
 import { useTitle } from '../hooks/useTitle';
 //import { AddEmployee } from './AddEmployee';
 //import { updateEmployee } from '../services/EmployeeService';
-export const ListEmployees = ({title}) => {
+export default function ListEmployees({title}){
 
     useTitle(title);
 

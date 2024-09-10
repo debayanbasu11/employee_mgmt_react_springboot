@@ -5,7 +5,7 @@ import { Header, Footer} from "./components";
 function App() {
   return (
     <div>
-      <Header footerAlert={footerAlert}/>
+      <Header/>
       <AllRoutes/>
       <Footer footerAlert={footerAlert}/>
     </div>
@@ -13,7 +13,7 @@ function App() {
 }
 
 const footerAlert = () => {
-  alert("All Rights Reserved 2024 @Debayan Basu");
+  alert("All Rights Reserved 2024 @IBM");
 }
 
 export default App;
