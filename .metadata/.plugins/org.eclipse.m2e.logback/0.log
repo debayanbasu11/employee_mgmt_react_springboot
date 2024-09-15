@@ -500,3 +500,9 @@
 2024-09-02 21:22:34,259 [Worker-47: Launching Executing generate-sources in D__WorkspaceEmployeeMgmt_emp_mgmt_backend] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: D:\downloads\sts-4.22.1.RELEASE\plugins\com.google.guava.failureaccess_1.0.2.jar
 2024-09-02 21:22:34,260 [Worker-47: Launching Executing generate-sources in D__WorkspaceEmployeeMgmt_emp_mgmt_backend] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "D:\WorkspaceEmployeeMgmt\emp_mgmt_backend":
 2024-09-02 21:22:34,260 [Worker-47: Launching Executing generate-sources in D__WorkspaceEmployeeMgmt_emp_mgmt_backend] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -Ppom.xml -B -Dstyle.color=always generate-sources
+2024-09-10 13:30:23,574 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-09-10 13:33:35,294 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-09-10 13:33:35,428 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-09-10 13:33:35,437 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\WorkspaceEmployeeMgmt\emp_mgmt_backend\src\test\resources
+2024-09-13 19:43:57,618 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-09-14 22:23:56,644 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

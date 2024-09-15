@@ -1,16 +1,15 @@
 import React, { useContext } from 'react'; 
 import { EmployeeContext } from '../Contexts/EmployeeContext';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const PreviewEmployee = (props) => {
 
-    //const navigator = useNavigate();
+   const navigator = useNavigate();
 
     const employeeDetails = useContext(EmployeeContext);
     
     const back = () => {
         //props.getData(employeeDetails);
-        console.log('/update-employee/'+employeeDetails.id);
         navigator('/update-employee/'+employeeDetails.id);
     }
 

@@ -116,7 +116,7 @@ export default function AddEmployee({title}) {
       <br/>
       
         {preview ? 
-        <EmployeeContext.Provider value={{name,designation,email,salary}}>
+        <EmployeeContext.Provider value={{id,name,designation,email,salary}}>
           <PreviewEmployee getData={getData}/> 
           </EmployeeContext.Provider>
           : 

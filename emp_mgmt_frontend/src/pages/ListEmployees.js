@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 //import { deleteEmployee, listEmployees, updateEmployee } from '../services/EmployeeService';
 import { deleteEmployee, listEmployees } from '../services/EmployeeService';
 import { useTitle } from '../hooks/useTitle';
+import Modal from '../components/Modal';
 //import { AddEmployee } from './AddEmployee';
 //import { updateEmployee } from '../services/EmployeeService';
-export default function ListEmployees({title}){
+export default function ListEmployees({title, render}){
 
     useTitle(title);
+    const renderProp = render;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
    //const { data: employees } = useFetch("http://localhost:8080/api/employees");
 
@@ -75,6 +81,18 @@ export default function ListEmployees({title}){
                 }
             </tbody>
         </table>
+
+        <Link to="/hoc" className='btn btn-success mb-2'>Higher Order Component</Link>
+        &nbsp;<Link to="/render-props" className='btn btn-success mb-2'>Render Props</Link>
+        {renderProp}
+        &nbsp;
+        <button  className='btn btn-success mb-2' onClick={openModal}>Open React Portal Modal</button>
+
+
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <h2>Modal Title</h2>
+            <p>This is the content inside the modal. It is rendered using React Portal!</p>
+        </Modal>
       
     </div>
   )
